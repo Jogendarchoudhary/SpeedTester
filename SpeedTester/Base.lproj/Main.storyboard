@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QtV-Ug-2hr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speed Tester-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeedTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jld-eg-f5P">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VPp-tU-7ai"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr0-cG-Orv">
+                                <rect key="frame" x="119" y="560" width="137" height="40"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.4941176471" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HuQ-yj-wO0"/>
+                                    <constraint firstAttribute="width" constant="137" id="vbZ-vR-Hne"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" title="STOP">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GP3-OH-rF2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yr0-cG-Orv" secondAttribute="bottom" constant="67" id="9pv-E8-UDl"/>
+                            <constraint firstItem="jld-eg-f5P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aKz-22-xpt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jld-eg-f5P" secondAttribute="bottom" id="eQx-Of-mhc"/>
+                            <constraint firstItem="yr0-cG-Orv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gZS-LJ-lEc"/>
+                            <constraint firstAttribute="trailing" secondItem="jld-eg-f5P" secondAttribute="trailing" id="j1h-tN-IAg"/>
+                            <constraint firstItem="jld-eg-f5P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sx7-Kt-1qS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speed Tester" id="a6Y-Zz-Djw"/>
+                    <connections>
+                        <outlet property="locationBtn" destination="yr0-cG-Orv" id="w8N-rf-caY"/>
+                        <outlet property="mapView" destination="jld-eg-f5P" id="Wa0-a4-gJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="-545.57721139430294"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GsX-aP-XRu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QtV-Ug-2hr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FW6-fE-NDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FeM-Jc-JaR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNB-5u-DCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="-543.77811094452773"/>
+        </scene>
+    </scenes>
+</document>
